@@ -5,8 +5,8 @@ public class Stack {
   Node top;
 
   //stack constructor
-  Stack{
-    
+  Stack(){
+    this.top = null;
   }
 
   public boolean isEmpty(){
@@ -18,7 +18,10 @@ public class Stack {
     }
   }
 
-  public static void push(String data){
-
+  public void push(String element){
+    Node myNode = new Node(element);
+    Node prevTop = this.top;
+    this.top = myNode;
+    myNode.pointer = prevTop;
   }
 }
