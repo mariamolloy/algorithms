@@ -23,16 +23,26 @@ public class Stack {
   public void push(String element){
 
     //create a new node w the data we want to add to the stack
-    Node myNode = new Node(element);
+    Node newNode = new Node(element);
 
     //set the new node's pointer to the node that used to be at the top of the stack
-    myNode.pointer = this.top;
+    newNode.pointer = this.top;
 
     //set the top to the node we just added
-    this.top = myNode;
+    this.top = newNode;
   }
 
-  public void pop(){
-
+  //method to remove the element at the top of the stack
+  public Node pop(){
+    //check to make sure there are elements in the stack to pop
+    if (this.isEmpty()){
+      System.out.println("Stack Underflow Error");
+      return null;
+    } else {
+      //as long as there is SOMETHING in the stack we can move forward and pop the top
+      Node poppedNode = this.top;
+      this.top = this.top.pointer;
+      return poppedNode;
+    }
   }
 }
