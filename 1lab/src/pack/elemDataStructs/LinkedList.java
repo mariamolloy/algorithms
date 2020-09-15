@@ -40,20 +40,46 @@ public class LinkedList {
     }
   }
 
+  //this method i made for testing my stack class
+  //basically takes a list and for each element in the list adds the content to its own stack letter by letter
+  //should print each word in the list backwards
+  public static void listToStack (LinkedList l){
+    Node currentNode = l.head;
+
+    while (currentNode != null){
+      String str = currentNode.data;
+      Stack word = new Stack();
+      for (int i = 0; i < str.length(); i++) {
+        String letter = "";
+        if (i == (str.length() - 1)){
+          letter = str.substring(str.length() - 1);
+        } else {
+          letter = str.substring(i, i + 1);
+        }
+        word.push(letter);
+      }
+      for (int j = str.length(); j > 0; j--){
+        System.out.print(word.pop().data);
+      }
+      currentNode = currentNode.pointer;
+    }
+  }
+
+
   public static void main(String[] args){
-    System.out.println("hello world");
 
     //create a new empty list
     LinkedList newList = new LinkedList();
 
     //insert values
-    newList = addTo(newList, "m");
-    newList = addTo(newList, "a");
-    newList = addTo(newList, "r");
-    newList = addTo(newList, "i");
+    newList = addTo(newList, "maria");
+    newList = addTo(newList, "minna");
+    newList = addTo(newList, "molloy");
     newList = addTo(newList, "aaa");
 
-    printList(newList);
+    listToStack(newList);
+
+
 
   }
 
