@@ -8,8 +8,11 @@ public class Palindrome {
     word = pal;
   }
 
+
+  /**
+  //maria -- i think everything in the while loop is what should be this method and everything outside while loop should be in a separate method in the linked list class
   //goes through a list to check for palindromes
-  public static boolean isPalindrome(LinkedList l){
+  public static boolean isPalindrome(Node currentNode){
     //traverse da list
     Node currentNode = l.head;
     while (currentNode != null){
@@ -61,7 +64,7 @@ public class Palindrome {
 
       currentNode = currentNode.pointer;
     }
-  }
+  } **/
 
 
 }
