@@ -19,7 +19,7 @@ public class Stack {
   }
 
   //method to add an element to the top of the stack
-  //element = the String data to be added to the stack
+  //element : the String data of the node to be added to the stack
   public void push(String element){
 
     //create a new node w the data we want to add to the stack
@@ -33,16 +33,18 @@ public class Stack {
   }
 
   //method to remove the element at the top of the stack
+  //returns the node we removed
   public Node pop(){
-    //check to make sure there are elements in the stack to pop
-    if (this.isEmpty()){
-      System.out.println("Stack Underflow Error");
-      return null;
-    } else {
-      //as long as there is SOMETHING in the stack we can move forward and pop the top
+
+    //as long as there is SOMETHING in the stack we can move forward and pop the top
+    if (!(this.isEmpty())){
       Node poppedNode = this.top;
       this.top = this.top.pointer;
       return poppedNode;
+    } else {
+      //is stack is empty we can't pop anything :(
+      System.out.println("Stack Underflow Error");
+      return null;
     }
   }
 }

@@ -2,8 +2,6 @@ package pack.elemDataStructs;
 
 public class Queue {
 
-  //maria -- u need to add an isEmpty method and always check if its empty b4 adding or removing
-
   //create a head and a tail of the queue
   Node header;
   Node tail;
@@ -15,7 +13,7 @@ public class Queue {
   }
 
   boolean isEmpty(){
-    //check to see if theres anything in the queue
+    //check to see if theres anything in the queue yet
     if (this.header == null){
       return true;
     } else{
@@ -23,19 +21,24 @@ public class Queue {
     }
   }
 
+  //method to enqueueueue a node (add to back of the queueue)
   public void enqueue(String l){
-    Node temp = new Node(l);
+
+    //new node we are enqueueueueing
+    Node newNode = new Node(l);
 
     //if list isn't empty add new node to the end of the queueueue
     if (!this.isEmpty()){
-      this.tail.pointer = temp;
-      this.tail = temp;
+      this.tail.pointer = newNode;
+      this.tail = newNode;
     } else {
       //if the list is empty the new node is the only element so its the head and tail
-      this.header = this.tail = temp;
+      this.header = this.tail = newNode;
     }
   }
 
+  //method to remove a node from the queueueue
+  //returns the node we removed
   public Node dequeue(){
 
     //if list isnt empty we pop the top (same idea as stack pop())
