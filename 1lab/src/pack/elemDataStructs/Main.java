@@ -36,15 +36,11 @@ public class Main {
         sb.append("\n");     //line feed
       }
       fr.close();    //closes the stream and release the resources
-      System.out.println("Contents of File: ");
+
+      //adds items to list of all items line by line
       allMagicItems.addTo(allMagicItems, sb.toString());
       //System.out.println(sb.toString());//returns a string that textually represents the object
 
-      /*
-      //trim whitespace off ends of item
-      String item = sb.toString().trim();
-      String noSpaceItem = item.replaceAll("\\s+", "");
-      allMagicItems.addTo(allMagicItems, noSpaceItem); */
     }
     catch(IOException e)
     {
@@ -61,6 +57,6 @@ public class Main {
     }
 
     myPals.printList(myPals);
-    allMagicItems.printList(allMagicItems);
+   // allMagicItems.printList(allMagicItems);
   }
 }

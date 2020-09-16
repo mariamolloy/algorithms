@@ -39,8 +39,11 @@ public class Node {
     //if word is a palindrome or not
     boolean isPal = false;
 
-    //get data of current node and make it all lowercase to avoid case sensitive typa errors
-    String str = this.data.toLowerCase();
+    //get data of current node and make it all lowercase to avoid case sensitive typa errors and trim whitespace off ends
+    String str = this.data.trim();
+        str = str.toLowerCase();
+    String noSpace = str.replaceAll("\\s+", "");
+
 
     //make the empty stack and queue that we will be adding each letter to
     Stack wordS = new Stack();
@@ -51,16 +54,16 @@ public class Node {
     int palCheck = 0;
 
     //go through word and add each letter to stack and a queue
-    for (int i = 0; i < str.length(); i++) {
+    for (int i = 0; i < noSpace.length(); i++) {
 
       //realllllly its gonna be a char every time but chars are more annoying than strings imho so its a string<3
       String letter = "";
 
       //only add one letter but check if its the last letter so no substring out of bounds error
-      if (i == (str.length() - 1)) {
-        letter = str.substring(str.length() - 1);
+      if (i == (noSpace.length() - 1)) {
+        letter = noSpace.substring(i);
       } else {
-        letter = str.substring(i, i + 1);
+        letter = noSpace.substring(i, i + 1);
       }
       //add each letter to stack/queue
       wordS.push(letter);
@@ -69,7 +72,7 @@ public class Node {
 
     //go thru our stack and queue and pop/dequeue to test letters against each other to find palindromes
     //this only works for even number amt of lettered words rn i think
-    for (int j = 0; j < str.length(); j++) {
+    for (int j = 0; j < noSpace.length(); j++) {
 
 
       //if both letters returned are the same, increase palCheck (pal is checkin out well)
@@ -79,9 +82,9 @@ public class Node {
       }
     }
 
-    //if palCheck == str.length then each letter in the node matches and it is a palindrome!!! yayyyy
-    if (palCheck == str.length()) {
-      return isPal;
+    //if palCheck == noSpace.length then each letter in the node matches and it is a palindrome!!! yayyyy
+    if (palCheck == noSpace.length()) {
+      return true;
     } else {
       return false;
     }
