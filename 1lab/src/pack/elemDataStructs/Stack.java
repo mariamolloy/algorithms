@@ -9,7 +9,7 @@ public class Stack {
     this.top = null;
   }
 
-  public boolean isEmpty(){
+  boolean isEmpty(){
     //check if list is empty by seeing if there is a top node yet
     if (top == null){
       return true;

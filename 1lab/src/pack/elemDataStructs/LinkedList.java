@@ -75,17 +75,15 @@ public class LinkedList {
     LinkedList myPals = new LinkedList();
 
     //insert values
-    newList = addTo(newList, "maria");
-    newList = addTo(newList, "minna");
+    newList = addTo(newList, "anna");
+    newList = addTo(newList, "raccar");
     newList = addTo(newList, "molloy");
-    newList = addTo(newList, "aaa");
-
-    listToStack(newList);
+    newList = addTo(newList, "moom");
 
     //traverse da listo, for each node check if its a palindrome and add to list of pals
     Node currentNode = newList.head;
     while (currentNode != null){
-      if (currentNode.isPalindrome(currentNode)){
+      if (currentNode.isPalindrome()){
         myPals = addTo(myPals, currentNode.data);
       }
       currentNode = currentNode.pointer;

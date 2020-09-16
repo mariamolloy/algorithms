@@ -12,10 +12,20 @@ public class Node {
     pointer = null;
   }
 
-  public boolean isPalindrome(Node n) {
+  public static boolean nodesEqual(Node n1, Node n2){
+    String s1 = n1.data;
+    String s2 = n2.data;
+    if (s1.equals(s2)){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  public boolean isPalindrome() {
 
     //get data of current node
-    String str = n.data;
+    String str = this.data;
     Stack wordS = new Stack();
     Queue wordQ = new Queue();
 
@@ -37,7 +47,7 @@ public class Node {
       }
       //add each letter to stack/queue
       wordS.push(letter);
-      wordQ.queue(letter);
+      wordQ.enqueue(letter);
     }
 
     //go thru our stack and queue and pop/dequeue to test letters against each other to find palindromes
@@ -47,7 +57,7 @@ public class Node {
       //just for testing pur poses
       System.out.print(wordS.pop().data);
       //if both letters returned are the same, increase palCheck (pal is checkin out well)
-      if (wordS.pop().data.equals(wordQ.dequeue().data)) {
+      if (nodesEqual(wordS.top, wordQ.head)) {
         palCheck++;
       }
     }
