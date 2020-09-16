@@ -38,14 +38,14 @@ public class Queue {
 
   public Node dequeue(){
 
-    //if list isnt empty we pop the top
+    //if list isnt empty we pop the top (same idea as stack pop())
     if (!(this.isEmpty())){
       Node firstInLine = this.header;
       this.header = this.header.pointer;
       return firstInLine;
     } else {
       //if its empty return null we cant dequeueue anything
-      System.out.println("S lol tack Underflow Error");
+      System.out.println("Stack Underflow Error");
       return null;
     }
   }

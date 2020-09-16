@@ -93,42 +93,4 @@ public class LinkedList {
     }
   }
 
-
-  public static void main(String[] args){
-
-    //create a new empty list
-    LinkedList newList = new LinkedList();
-
-    //create a new empty list of palindromes
-    LinkedList myPals = new LinkedList();
-
-    //insert values
-    newList = addTo(newList, "anna");
-    newList = addTo(newList, "hello");
-    newList = addTo(newList, "molloy");
-    newList = addTo(newList, "moom");
-
-
-    //traverse da listo, for each node check if its a palindrome and add to list of pals
-    Node currentNode = newList.head;
-    while (currentNode != null){
-      if (currentNode.isPalindrome()){
-        myPals = addTo(myPals, currentNode.data);
-      }
-      currentNode = currentNode.pointer;
-    }
-
-    printList(myPals);
-
-
-
-
-/*
-  listToStack(newList);
-    System.out.print("\n");
-  listToQueue(newList);
-*/
-
-  }
-
 }
