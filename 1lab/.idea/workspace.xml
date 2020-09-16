@@ -21,11 +21,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pack/elemDataStructs/LinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1077">
-              <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            <state relative-caret-position="124">
+              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -43,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Queue.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Queue.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/elemDataStructs/Queue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -68,8 +68,8 @@
         <option value="$PROJECT_DIR$/src/pack/elemDataStructs/Palindrome.java" />
         <option value="$PROJECT_DIR$/src/pack/elemDataStructs/Stack.java" />
         <option value="$PROJECT_DIR$/src/pack/elemDataStructs/Node.java" />
-        <option value="$PROJECT_DIR$/src/pack/elemDataStructs/LinkedList.java" />
         <option value="$PROJECT_DIR$/src/pack/elemDataStructs/Queue.java" />
+        <option value="$PROJECT_DIR$/src/pack/elemDataStructs/LinkedList.java" />
       </list>
     </option>
   </component>
@@ -221,12 +221,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600111968749</updated>
-      <workItem from="1600111974146" duration="19114000" />
+      <workItem from="1600111974146" duration="19391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19114000" />
+    <option name="totallyTimeSpent" value="19391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="87" y="23" width="1193" height="698" extended-state="0" />
@@ -310,17 +310,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/elemDataStructs/LinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1077">
-          <caret line="1" column="17" lean-forward="true" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pack/elemDataStructs/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="38" column="24" lean-forward="true" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pack/elemDataStructs/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
         </state>
       </provider>
     </entry>

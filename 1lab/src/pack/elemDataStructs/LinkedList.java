@@ -44,6 +44,7 @@ public class LinkedList {
   //this method i made for testing my stack class
   //basically takes a list and for each element in the list adds the content to its own stack letter by letter
   //should print each word in the list backwards
+  //same logic as isPalindrome
   public static void listToStack (LinkedList l){
     Node currentNode = l.head;
 
@@ -66,6 +67,10 @@ public class LinkedList {
     }
   }
 
+  //this is a method i made to test and debug my queue methods
+  //works the same as listToStack basically just traverses a list and for each node enqueues each letter individually then dequeues and prints
+  //should print letters in correct order
+  //same logic as isPalindrome
   public static void listToQueue (LinkedList l){
     Node currentNode = l.head;
 
@@ -98,12 +103,12 @@ public class LinkedList {
     LinkedList myPals = new LinkedList();
 
     //insert values
-    newList = addTo(newList, "banna");
+    newList = addTo(newList, "anna");
     newList = addTo(newList, "hello");
     newList = addTo(newList, "molloy");
     newList = addTo(newList, "moom");
 
-/*
+
     //traverse da listo, for each node check if its a palindrome and add to list of pals
     Node currentNode = newList.head;
     while (currentNode != null){
@@ -117,12 +122,12 @@ public class LinkedList {
 
 
 
-*/
 
-  //listToStack(newList);
+/*
+  listToStack(newList);
     System.out.print("\n");
   listToQueue(newList);
-
+*/
 
   }
 
