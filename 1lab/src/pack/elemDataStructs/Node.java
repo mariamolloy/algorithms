@@ -13,16 +13,23 @@ public class Node {
   }
 
   public static boolean nodesEqual(Node n1, Node n2){
-    String s1 = n1.data;
-    String s2 = n2.data;
-    if (s1.equals(s2)){
-      return true;
+    if (!(n1.data == null) && !(n2.data == null)) {
+      String s1 = n1.data;
+      String s2 = n2.data;
+      if (s1.equals(s2)) {
+        return true;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }
+
   }
 
   public boolean isPalindrome() {
+
+    boolean isPal = false;
 
     //get data of current node
     String str = this.data;
@@ -52,19 +59,19 @@ public class Node {
 
     //go thru our stack and queue and pop/dequeue to test letters against each other to find palindromes
     //this only works for even number amt of lettered words rn i think
-    for (int j = str.length(); j > 0; j--) {
+    for (int j = 0; j < str.length(); j++) {
 
-      //just for testing pur poses
-      System.out.print(wordS.pop().data);
+
       //if both letters returned are the same, increase palCheck (pal is checkin out well)
-      if (nodesEqual(wordS.top, wordQ.head)) {
+      if (nodesEqual(wordS.pop(), wordQ.dequeue())) {
         palCheck++;
+        isPal = true;
       }
     }
 
     //if palCheck == str.length then it is a palindrome!!! yayyyy
     if (palCheck == str.length()) {
-      return true;
+      return isPal;
     } else {
       return false;
     }

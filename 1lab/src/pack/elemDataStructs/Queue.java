@@ -16,7 +16,7 @@ public class Queue {
 
   boolean isEmpty(){
     //check to see if theres anything in the queue
-    if (head == null){
+    if ((this.head == null) && (this.tail == null)){
       return true;
     } else{
       return false;
@@ -27,7 +27,7 @@ public class Queue {
     Node newNode = new Node(l);
 
     //if list isn't empty add new node to the end of the queueueue
-    if (!isEmpty()){
+    if (!this.isEmpty()){
       newNode.pointer = this.tail;
       this.tail = newNode;
     } else {
@@ -40,12 +40,13 @@ public class Queue {
   public Node dequeue(){
 
     //if list isnt empty we pop the top
-    if (!isEmpty()){
+    if (!(this.isEmpty())){
       Node firstInLine = this.head;
       this.head = this.head.pointer;
       return firstInLine;
     } else {
       //if its empty return null we cant dequeueue anything
+      System.out.println("Stack Underflow Error");
       return null;
     }
   }

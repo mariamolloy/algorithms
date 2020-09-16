@@ -65,6 +65,28 @@ public class LinkedList {
     }
   }
 
+  public static void listToQueue (LinkedList l){
+    Node currentNode = l.head;
+
+    while (currentNode != null){
+      String str = currentNode.data;
+      Queue word = new Queue();
+      for (int i = 0; i < str.length(); i++) {
+        String letter = "";
+        if (i == (str.length() - 1)){
+          letter = str.substring(str.length() - 1);
+        } else {
+          letter = str.substring(i, i + 1);
+        }
+        word.enqueue(letter);
+      }
+      for (int j = str.length(); j > 0; j--){
+        System.out.print(word.dequeue().data);
+      }
+      currentNode = currentNode.pointer;
+    }
+  }
+
 
   public static void main(String[] args){
 
@@ -80,6 +102,7 @@ public class LinkedList {
     newList = addTo(newList, "molloy");
     newList = addTo(newList, "moom");
 
+/*
     //traverse da listo, for each node check if its a palindrome and add to list of pals
     Node currentNode = newList.head;
     while (currentNode != null){
@@ -92,6 +115,12 @@ public class LinkedList {
     printList(myPals);
 
 
+
+*/
+
+  //listToStack(newList);
+    System.out.print("\n");
+  listToQueue(newList);
 
 
   }
