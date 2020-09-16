@@ -1,8 +1,10 @@
 package pack.elemDataStructs;
 import java.io.*;
+import java.util.Scanner;
 
 
-//maria -- it only is reading the
+//maria -- i think it is reading the entire text file into one string or something
+//try like scanner instead of string buffer shit
 public class Main {
   public static void main(String[] args){
     //create a new empty list
@@ -22,25 +24,20 @@ public class Main {
     newList.addTo(newList, "racecar");
     newList.addTo(newList, "boob");
 
-
     try
     {
-      File magicItems = new File("magicitems.txt");    //creates a new file instance
-      FileReader fr = new FileReader(magicItems);   //reads the file
-      BufferedReader br = new BufferedReader(fr);  //creates a buffering character input stream
-      StringBuffer sb = new StringBuffer();    //constructs a string buffer with no characters
-      String line;
-      while((line = br.readLine())!= null)
+//the file to be opened for reading
+      FileInputStream fis=new FileInputStream("magicitems.txt");
+      Scanner sc=new Scanner(fis);    //file to be scanned
+//returns true if there is another line to read
+      while(sc.hasNextLine())
       {
-        sb.append(line);      //appends line to string buffer
-        sb.append("\n");     //line feed
+
+        //returns the line that was skipped
+        String d = sc.nextLine();
+        allMagicItems.addTo(allMagicItems, d);
       }
-      fr.close();    //closes the stream and release the resources
-
-      //adds items to list of all items line by line
-      allMagicItems.addTo(allMagicItems, sb.toString());
-      //System.out.println(sb.toString());//returns a string that textually represents the object
-
+      sc.close();     //closes the scanner
     }
     catch(IOException e)
     {
@@ -56,7 +53,7 @@ public class Main {
       currentNode = currentNode.pointer;
     }
 
+    System.out.println("Palindromes:");
     myPals.printList(myPals);
-   // allMagicItems.printList(allMagicItems);
   }
 }

@@ -33,10 +33,9 @@ public class LinkedList {
 
   public static void printList (LinkedList list){
     Node currentNode = list.head;
-    System.out.print("LinkedList: ");
 
     while (currentNode != null){
-      System.out.print(currentNode.data + " ");
+      System.out.print(currentNode.data + " \n");
       currentNode = currentNode.pointer;
     }
   }
