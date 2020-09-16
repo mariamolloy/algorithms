@@ -1,4 +1,5 @@
 package pack.elemDataStructs;
+import java.io.*;
 
 public class LinkedList {
   //creates a head of the list
@@ -74,7 +75,7 @@ public class LinkedList {
       for (int i = 0; i < str.length(); i++) {
         String letter = "";
         if (i == (str.length() - 1)){
-          letter = str.substring(str.length() - 1);
+          letter = str.substring(i);
         } else {
           letter = str.substring(i, i + 1);
         }
@@ -97,8 +98,8 @@ public class LinkedList {
     LinkedList myPals = new LinkedList();
 
     //insert values
-    newList = addTo(newList, "anna");
-    newList = addTo(newList, "raccar");
+    newList = addTo(newList, "banna");
+    newList = addTo(newList, "hello");
     newList = addTo(newList, "molloy");
     newList = addTo(newList, "moom");
 

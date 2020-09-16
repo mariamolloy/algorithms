@@ -5,18 +5,18 @@ public class Queue {
   //maria -- u need to add an isEmpty method and always check if its empty b4 adding or removing
 
   //create a head and a tail of the queue
-  Node head;
+  Node header;
   Node tail;
 
   //queue constructor
   Queue(){
-    this.head = null;
+    this.header = null;
     this.tail = null;
   }
 
   boolean isEmpty(){
     //check to see if theres anything in the queue
-    if ((this.head == null) && (this.tail == null)){
+    if (this.header == null){
       return true;
     } else{
       return false;
@@ -24,16 +24,15 @@ public class Queue {
   }
 
   public void enqueue(String l){
-    Node newNode = new Node(l);
+    Node temp = new Node(l);
 
     //if list isn't empty add new node to the end of the queueueue
     if (!this.isEmpty()){
-      newNode.pointer = this.tail;
-      this.tail = newNode;
+      this.tail.pointer = temp;
+      this.tail = temp;
     } else {
       //if the list is empty the new node is the only element so its the head and tail
-      this.head = newNode;
-      this.tail = newNode;
+      this.header = this.tail = temp;
     }
   }
 
@@ -41,12 +40,12 @@ public class Queue {
 
     //if list isnt empty we pop the top
     if (!(this.isEmpty())){
-      Node firstInLine = this.head;
-      this.head = this.head.pointer;
+      Node firstInLine = this.header;
+      this.header = this.header.pointer;
       return firstInLine;
     } else {
       //if its empty return null we cant dequeueue anything
-      System.out.println("Stack Underflow Error");
+      System.out.println("S lol tack Underflow Error");
       return null;
     }
   }
