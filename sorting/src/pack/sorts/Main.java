@@ -44,14 +44,12 @@ public class Main {
     Sort insertion = new Sort(magicItems);
     System.out.println("Insertion sort had " + insertion.insertionSort() + " comparisons");
 
-    for (int i = 0; i < insertion.arr.length; ++i) {
-      System.out.println(insertion.arr[i] + " ");
-    }
+    Sort selection = new Sort(magicItems);
+    System.out.println("Selection sort had " + selection.selectionSort() + " comparisons");
 
-    /**System.out.println(Sort.selectionSort(magicItems));
-    System.out.println(Sort.insertionSort(magicItems));
-    System.out.println(Sort.mergeSort(magicItems));
-    System.out.println(Sort.quickSort(magicItems));**/
+    for (int i = 0; i < selection.arr.length; i++) {
+      System.out.println(selection.arr[i] + " ");
+    }
 
   }
 }
