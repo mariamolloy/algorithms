@@ -39,6 +39,9 @@ public class Main {
 
   public static void main(String[] args){
     String[] magicItems = magicArray("magicitems.txt");
+    /*for (int i = 0; i < magicItems.length; i++) {
+      System.out.println(magicItems[i] + " ");
+    }*/
 
     //insertion sort
     Sort insertion = new Sort(magicItems);

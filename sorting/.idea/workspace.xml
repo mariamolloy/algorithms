@@ -12,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pack/sorts/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <state relative-caret-position="209">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#268#276#0" expanded="true" />
@@ -25,14 +25,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sort.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sort.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pack/sorts/Sort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state relative-caret-position="320">
+              <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
               <folding>
-                <element signature="e#994#995#0" expanded="true" />
-                <element signature="e#1012#1013#0" expanded="true" />
                 <element signature="e#1058#1059#0" expanded="true" />
                 <element signature="e#1076#1077#0" expanded="true" />
               </folding>
@@ -52,8 +50,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pack/sorts/Sort.java" />
         <option value="$PROJECT_DIR$/src/pack/sorts/Main.java" />
+        <option value="$PROJECT_DIR$/src/pack/sorts/Sort.java" />
       </list>
     </option>
   </component>
@@ -106,6 +104,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -188,12 +187,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601420851068</updated>
-      <workItem from="1601420855601" duration="5476000" />
+      <workItem from="1601420855601" duration="7685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5476000" />
+    <option name="totallyTimeSpent" value="7685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="77" y="23" width="1193" height="698" extended-state="0" />
@@ -236,26 +235,24 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pack/sorts/Sort.java">
+    <entry file="file://$PROJECT_DIR$/src/pack/sorts/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        <state relative-caret-position="209">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding>
-            <element signature="e#994#995#0" expanded="true" />
-            <element signature="e#1012#1013#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#1076#1077#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#268#276#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pack/sorts/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/pack/sorts/Sort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="49" column="49" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+        <state relative-caret-position="320">
+          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#268#276#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+            <element signature="e#1076#1077#0" expanded="true" />
           </folding>
         </state>
       </provider>
