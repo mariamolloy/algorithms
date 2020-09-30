@@ -39,20 +39,22 @@ public class Main {
 
   public static void main(String[] args){
     String[] magicItems = magicArray("magicitems.txt");
-    /*for (int i = 0; i < magicItems.length; i++) {
-      System.out.println(magicItems[i] + " ");
-    }*/
 
     //insertion sort
     Sort insertion = new Sort(magicItems);
-    System.out.println("Insertion sort had " + insertion.insertionSort() + " comparisons");
+    insertion.insertionSort();
+    System.out.println("Insertion sort had " + insertion.comparisons + " comparisons");
 
+    //selection sort
     Sort selection = new Sort(magicItems);
-    System.out.println("Selection sort had " + selection.selectionSort() + " comparisons");
+    selection.selectionSort();
+    System.out.println("Selection sort had " + selection.comparisons + " comparisons");
 
-    for (int i = 0; i < selection.arr.length; i++) {
-      System.out.println(selection.arr[i] + " ");
-    }
+    //merge sort
+    Sort merge = new Sort(magicItems);
+    merge.mergeSort(0, magicItems.length - 1);
+    System.out.println("Merge sort had " + merge.comparisons + " comparisons");
+
 
   }
 }

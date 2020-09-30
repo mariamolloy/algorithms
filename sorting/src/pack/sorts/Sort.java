@@ -43,9 +43,10 @@ public class Sort {
     return this.comparisons;
   }
 
+  //method to merge two subarrays
   //arr is the array we are sorting and p, q and r are indices of the array that indicate the sub arrays
   //assumes sub arrays arr[p - q] and arr[q+ 1  - r] are already sorted
-  public static void merge(String[] arr, int p, int q, int r){
+  public void merge(int p, int q, int r){
     //find sizes of arrays to be merged
     int n1 = (q - p) + 1;
     int n2 = r - q;
@@ -56,10 +57,10 @@ public class Sort {
 
     //copy data to temporary arrays
     for (int i = 0; i < n1; i++){
-      temp1[i] = arr[p + i];
+      temp1[i] = this.arr[p + i];
     }
     for (int j = 0; j < n2; j++){
-      temp2[j] = arr[q + j + 1];
+      temp2[j] = this.arr[q + j + 1];
     }
 
     //merge the temp arrays
@@ -67,43 +68,48 @@ public class Sort {
     int j = 0;
     int k = p;
 
-    //
+    //goo through and combine arrays
     while ((i < n1) && (j < n2)) {
       if (temp1[i].compareTo(temp2[j]) <= 0){
-        arr[k] = temp1[i];
+        this.arr[k] = temp1[i];
         i++;
       } else {
-        arr[k] = temp2[j];
+        this.arr[k] = temp2[j];
         j++;
       }
+      this.comparisons++;
       k++;
     }
 
+    //if any elements havent been added, add them!
     while (i < n1){
-      arr[k] = temp1[i];
+      this.arr[k] = temp1[i];
       i++;
       k++;
     }
 
     while (j < n2){
-      arr[k] = temp2[j];
+      this.arr[k] = temp2[j];
       j++;
       k++;
     }
   }
 
-  public static int mergeSort(String[] arr, int p, int r){
-    int comp = 0;
+  //recursive mergesort function
+  //takes start and end indices of array as a parameter
+  public void mergeSort(int p, int r){
     if (p < r){
-      comp++;
       int mid = (p + r)/2;
-      mergeSort(arr, p, mid);
-      mergeSort(arr, mid + 1, r);
+      //this is the divide part
+      //recursion time :D
+      mergeSort(p, mid);
+      mergeSort(mid + 1, r);
 
-      merge(arr, p, mid, r);
+      //this is the conquer part
+      merge(p, mid, r);
     }
-    return comp;
   }
+
 
   public static int quickSort(String[] arr){
     return 3;
