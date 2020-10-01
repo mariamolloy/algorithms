@@ -55,6 +55,12 @@ public class Main {
     merge.mergeSort(0, magicItems.length - 1);
     System.out.println("Merge sort had " + merge.comparisons + " comparisons");
 
-
+    //quick sort
+    Sort quick = new Sort(magicItems);
+    quick.quickSort(0, magicItems.length - 1);
+    System.out.println("Quick sort had " + quick.comparisons + " comparisons");
+    
   }
+
+
 }
