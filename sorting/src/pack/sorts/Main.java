@@ -59,7 +59,7 @@ public class Main {
     Sort quick = new Sort(magicItems);
     quick.quickSort(0, magicItems.length - 1);
     System.out.println("Quick sort had " + quick.comparisons + " comparisons");
-    
+
   }
 
 
