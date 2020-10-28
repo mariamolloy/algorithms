@@ -8,9 +8,13 @@ public class Search {
         this.comparisons = 0;
     }
 
+    public void init(){
+        this.comparisons = 0;
+    }
+
+
     public String linearSearch(String item){
         this.comparisons = 0;
-        item = item.toUpperCase();
         boolean found = false;
         for (int i = 0; i < this.arr.length; i++){
             this.comparisons++;
@@ -21,6 +25,22 @@ public class Search {
             }
         }
         return null;
+    }
+
+    public String binarySearch(String item, int start, int stop){
+        if (start < stop){
+            this.comparisons++;
+            int mid = (start + stop) / 2 - 1;
+             if (this.arr[mid].equals(item)){
+                 return this.arr[mid];
+             } else if (this.arr[mid].compareToIgnoreCase(item) < 0){
+                return(binarySearch(item, mid + 1, stop));
+             } else {
+                 return (binarySearch(item, start, mid -1));
+             }
+        } else {
+            return "not found";
+        }
     }
 
     //method to merge two subarrays
