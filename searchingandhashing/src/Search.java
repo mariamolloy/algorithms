@@ -8,45 +8,45 @@ public class Search {
         this.comparisons = 0;
     }
 
+    //reset comparisons to 0
     public void init(){
         this.comparisons = 0;
     }
 
-
+    //linear search algorithm
+    //takes the item in the list we are searching for as a parameter
     public String linearSearch(String item){
         this.comparisons = 0;
-        boolean found = false;
+        //go through array and look for item
         for (int i = 0; i < this.arr.length; i++){
-            this.comparisons++;
+            this.comparisons++; //increment comparisons
             String curr = this.arr[i].toUpperCase();
             if (curr.equals(item)){
-                found = true;
-                return curr;
+                return curr; //we found it!!!
             }
         }
-        return null;
+        return null; //it wasnt in the list :(
     }
 
+    //function to do a binary search
+    //takes the item we are searching for along with where we are starting and stopping our search as params
     public int binarySearch(String item, int start, int stop){
-        this.comparisons++;
-
-        if (start < stop) {
-            int mid = (((stop - start) / 2 ) + 1) + start;
+        this.comparisons++; //increment comparisons
+        if (start < stop) { //we are still searching
+            int mid = (((stop - start) / 2 ) + 1) + start; //middle value
             if (this.arr[mid].compareToIgnoreCase(item) == 0) {
-                return mid;
+                return mid; //we found it!!!
             } else if (this.arr[mid].compareToIgnoreCase(item) < 0) {
-               // System.out.println("comes first" + this.arr[mid].compareToIgnoreCase(item));
-                return (binarySearch(item, mid + 1, stop));
+                return (binarySearch(item, mid + 1, stop)); //go back and search right half
             } else if (this.arr[mid].compareToIgnoreCase(item) > 0) {
-                //System.out.println("comes later" + this.arr[mid].compareToIgnoreCase(item));
-                return (binarySearch(item, start, mid - 1));
+                return (binarySearch(item, start, mid - 1)); //go back and search left half
             } else {
-                return -1;
+                return -1; //we didnt find it :(
             }
         } else if (start == stop){
-            return start;
+            return start; //we found iT!
         } else {
-            return -1;
+            return -1; //we didnt find it :(
         }
     }
 
@@ -117,4 +117,8 @@ public class Search {
             merge(p, mid, r);
         }
     }
+
+
 }
+
+

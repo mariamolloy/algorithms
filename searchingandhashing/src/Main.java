@@ -42,10 +42,12 @@ public class Main {
         int size = magicItems.length;
 
         int linearAvgComp = 0;
-        for (int i = 0; i < magic42.length; i++){
+     /*   for (int i = 0; i < magic42.length; i++){
             System.out.println(magic42[i]);
-        }
+        } */
+        //new linear search
         Search linear = new Search(magicItems);
+        //go through array of 42 and search for each element
         for (int i = 0; i < magic42.length; i++){
             String current = magic42[i];
             System.out.println(linear.linearSearch(current) + " with " + linear.comparisons + " comparisons");
@@ -54,27 +56,23 @@ public class Main {
         linearAvgComp = linearAvgComp / magic42.length;
         System.out.println("Linear Search had an average of " + linearAvgComp + " comparisons");
 
-        
+
         Search binary = new Search(magicItems);
         binary.mergeSort(0, size - 1);
         int binaryAvgComp = 0;
+        //go through array of 42 and search for each element
         for (int j = 0; j < magic42.length; j++){
             String current = magic42[j];
             binary.init();
-
                 System.out.println(magicItems[binary.binarySearch(current, 0, size - 1)] + " with " + binary.comparisons + " comparisons");
                 binaryAvgComp += binary.comparisons;
-
-
         }
         binaryAvgComp = binaryAvgComp / magic42.length;
         System.out.println("Binary Search had an average of " + binaryAvgComp + " comparisons");
-        
     }
 
-    //make this return a random list of 42 elements
+    //function returns random 42 elements in an array
     public static String[] find42 (String[] arr){
-      // Queue allItems = new Queue();
         int size = arr.length;
         String[] randomItems = new String[42];
         for (int i = 0; i < 42; i++){
