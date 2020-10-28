@@ -2,6 +2,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
 
@@ -36,23 +37,32 @@ public class Main {
 
     public static void main (String[] args){
         String[] magicItems = magicArray("magicitems.txt");
-        String[] magic42 = find42(magicItems);
-
+        String[] magic42 = find42(magicArray("magicitems.txt"));
+        for (int i = 0; i < magic42.length; i++){
+            System.out.println(magic42[i]);
+        }
         Search project3 = new Search(magicItems);
         for (int i = 0; i < magic42.length; i++){
             String current = magic42[i];
-            System.out.println(project3.linearSearch(current));
+            System.out.println(project3.linearSearch(current) + " with " + project3.comparisons + " comparisons");
         }
         
     }
 
     //make this return a random list of 42 elements
     public static String[] find42 (String[] arr){
+      // Queue allItems = new Queue();
         int size = arr.length;
-        if (size >= 42){
-            for (int i = 0; i < size; i++){
-
-            }
+        String[] randomItems = new String[42];
+        for (int i = 0; i < 42; i++){
+            Random r = new Random();
+            int index = r.nextInt(size);
+                while(arr[index] == null){
+                    index = r.nextInt(size);
+                }
+                randomItems[i] = arr[index];
+                arr[index] = null;
         }
+        return randomItems;
     }
 }

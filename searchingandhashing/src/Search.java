@@ -9,9 +9,11 @@ public class Search {
     }
 
     public String linearSearch(String item){
+        this.comparisons = 0;
         item = item.toUpperCase();
         boolean found = false;
         for (int i = 0; i < this.arr.length; i++){
+            this.comparisons++;
             String curr = this.arr[i].toUpperCase();
             if (curr.equals(item)){
                 found = true;

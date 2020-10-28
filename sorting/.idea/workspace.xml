@@ -20,16 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516342fc-e9b5-49c0-8066-5b2d630f69e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../searchingandhashing/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../searchingandhashing/magicitems.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../searchingandhashing/src/Search.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assignment 1/1lab/magicitems.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../searchingandhashing/src/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../searchingandhashing/src/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../searchingandhashing/out/production/searchingandhashing/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/out/production/searchingandhashing/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../searchingandhashing/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../searchingandhashing/src/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/src/Search.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sorting/pack/sorts/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sorting/pack/sorts/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sorting/pack/sorts/Sort.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sorting/pack/sorts/Sort.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
