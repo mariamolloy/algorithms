@@ -39,10 +39,12 @@ public class Main {
         String[] magicItems = magicArray("magicitems.txt");
         String[] magic42 = find42(magicArray("magicitems.txt"));
 
+        int size = magicItems.length;
+
         int linearAvgComp = 0;
         for (int i = 0; i < magic42.length; i++){
-            System.out.println(magic42[i]); }
-      /*  }
+            System.out.println(magic42[i]);
+        }
         Search linear = new Search(magicItems);
         for (int i = 0; i < magic42.length; i++){
             String current = magic42[i];
@@ -50,15 +52,20 @@ public class Main {
             linearAvgComp += linear.comparisons;
         }
         linearAvgComp = linearAvgComp / magic42.length;
-        System.out.println("Linear Search had an average of " + linearAvgComp + " comparisons"); */
+        System.out.println("Linear Search had an average of " + linearAvgComp + " comparisons");
 
+        
         Search binary = new Search(magicItems);
+        binary.mergeSort(0, size - 1);
         int binaryAvgComp = 0;
         for (int j = 0; j < magic42.length; j++){
             String current = magic42[j];
             binary.init();
-            System.out.println(binary.binarySearch(current, 0, magicItems.length) + " with " + binary.comparisons + " comparisons");
-            binaryAvgComp += binary.comparisons;
+
+                System.out.println(magicItems[binary.binarySearch(current, 0, size - 1)] + " with " + binary.comparisons + " comparisons");
+                binaryAvgComp += binary.comparisons;
+
+
         }
         binaryAvgComp = binaryAvgComp / magic42.length;
         System.out.println("Binary Search had an average of " + binaryAvgComp + " comparisons");

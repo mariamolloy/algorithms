@@ -27,21 +27,29 @@ public class Search {
         return null;
     }
 
-    public String binarySearch(String item, int start, int stop){
-        if (start < stop){
-            this.comparisons++;
-            int mid = (start + stop) / 2 - 1;
-             if (this.arr[mid].equals(item)){
-                 return this.arr[mid];
-             } else if (this.arr[mid].compareToIgnoreCase(item) < 0){
-                return(binarySearch(item, mid + 1, stop));
-             } else {
-                 return (binarySearch(item, start, mid -1));
-             }
+    public int binarySearch(String item, int start, int stop){
+        this.comparisons++;
+
+        if (start < stop) {
+            int mid = (((stop - start) / 2 ) + 1) + start;
+            if (this.arr[mid].compareToIgnoreCase(item) == 0) {
+                return mid;
+            } else if (this.arr[mid].compareToIgnoreCase(item) < 0) {
+               // System.out.println("comes first" + this.arr[mid].compareToIgnoreCase(item));
+                return (binarySearch(item, mid + 1, stop));
+            } else if (this.arr[mid].compareToIgnoreCase(item) > 0) {
+                //System.out.println("comes later" + this.arr[mid].compareToIgnoreCase(item));
+                return (binarySearch(item, start, mid - 1));
+            } else {
+                return -1;
+            }
+        } else if (start == stop){
+            return start;
         } else {
-            return "not found";
+            return -1;
         }
     }
+
 
     //method to merge two subarrays
     //arr is the array we are sorting and p, q and r are indices of the array that indicate the sub arrays
