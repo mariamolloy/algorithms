@@ -54,7 +54,7 @@ public class Main {
             linearAvgComp += linear.comparisons;
         }
         linearAvgComp = linearAvgComp / magic42.length;
-        System.out.println("Linear Search had an average of " + linearAvgComp + " comparisons");
+        System.out.println("Linear Search finished with an average of " + linearAvgComp + " comparisons");
 
 
         Search binary = new Search(magicItems);
@@ -68,7 +68,24 @@ public class Main {
                 binaryAvgComp += binary.comparisons;
         }
         binaryAvgComp = binaryAvgComp / magic42.length;
-        System.out.println("Binary Search had an average of " + binaryAvgComp + " comparisons");
+        System.out.println("Binary Search finished with an average of " + binaryAvgComp + " comparisons");
+
+        HashTable myHash = new HashTable();
+        int hashAvgComp = 0;
+        for (int k = 0; k < magicItems.length; k++){
+            myHash.addToTable(magicItems[k]);
+        }
+
+        for (int l = 0; l < magic42.length; l++){
+            if(myHash.getFromTable(magic42[l])){
+                System.out.println(magic42[l] + " with " + myHash.comparisons + " comparisons");
+                hashAvgComp++;
+            }else {
+                System.out.println("not found");
+            }
+        }
+        hashAvgComp = hashAvgComp / magic42.length;
+        System.out.println("Hashing finished with an average of " + hashAvgComp + " comparisons");
     }
 
     //function returns random 42 elements in an array
