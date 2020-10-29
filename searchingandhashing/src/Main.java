@@ -50,7 +50,7 @@ public class Main {
         //go through array of 42 and search for each element
         for (int i = 0; i < magic42.length; i++){
             String current = magic42[i];
-            System.out.println(linear.linearSearch(current) + " with " + linear.comparisons + " comparisons");
+            System.out.println(linear.linearSearch(current) + " & " + linear.comparisons);
             linearAvgComp += linear.comparisons;
         }
         linearAvgComp = linearAvgComp / magic42.length;
@@ -64,7 +64,7 @@ public class Main {
         for (int j = 0; j < magic42.length; j++){
             String current = magic42[j];
             binary.init();
-                System.out.println(magicItems[binary.binarySearch(current, 0, size - 1)] + " with " + binary.comparisons + " comparisons");
+                System.out.println(magicItems[binary.binarySearch(current, 0, size - 1)] + " & " + binary.comparisons);
                 binaryAvgComp += binary.comparisons;
         }
         binaryAvgComp = binaryAvgComp / magic42.length;
@@ -78,7 +78,7 @@ public class Main {
 
         for (int l = 0; l < magic42.length; l++){
             if(myHash.getFromTable(magic42[l])){
-                System.out.println(magic42[l] + " with " + myHash.comparisons + " comparisons");
+                System.out.println(magic42[l] + " & " + myHash.comparisons);
                 hashAvgComp++;
             }else {
                 System.out.println("not found");

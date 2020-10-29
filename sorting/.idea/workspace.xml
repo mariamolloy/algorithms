@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516342fc-e9b5-49c0-8066-5b2d630f69e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../searchingandhashing/src/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../searchingandhashing/src/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../searchingandhashing/out/production/searchingandhashing/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/out/production/searchingandhashing/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../searchingandhashing/out/production/searchingandhashing/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/out/production/searchingandhashing/Search.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../searchingandhashing/src/Hashing.java" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/src/HashTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../searchingandhashing/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../searchingandhashing/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
