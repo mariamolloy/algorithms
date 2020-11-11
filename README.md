@@ -1,3 +1,3 @@
 # cmpt435
 
-Hello :) for assignment 1, please grade the code in the assignment 1 folder. specifically Assignment 1/1lab/src/pack/elemDataStructs/Main.java. Thanks! - Maria
+For assignment 3 (actually assignment 3 this time!!! not just my typo!) please refer to the folder searchingandhashing :)
