@@ -10,7 +10,11 @@ public class Graph {
         this.vertices = v;
         this.matrix = new boolean[v][v];
         this.zeroIndex = index;
-      // this.adjacencyList = new ArrayList<ArrayList<Integer>>(v);
+        this.adjacencyList = new ArrayList<ArrayList<Integer>>(v);
+        //add vertices to array list
+        for (int i = 0; i < v; i++){
+            adjacencyList.add(new ArrayList<Integer>());
+        }
     }
 
     //adds an edge both the matrix and adjacency graph representations
@@ -19,8 +23,8 @@ public class Graph {
         this.matrix[i][j] = true;
         this.matrix[j][i] = true;
 
-      //  this.adjacencyList.get(i).add(j);
-      //  this.adjacencyList.get(j).add(i);
+        this.adjacencyList.get(i).add(j);
+        this.adjacencyList.get(j).add(i);
     }
 
     public String printMatrix(){
@@ -45,9 +49,27 @@ public class Graph {
         return s.toString();
     }
 
-/*    public String printList(){
-
-    } */
+    public String printList(){
+        StringBuilder s = new StringBuilder();
+        if (this.zeroIndex) {
+            for (int i = 0; i < this.adjacencyList.size(); i++) {
+                s.append("Vertex " + i + ":");
+                for (int j = 0; j < this.adjacencyList.get(i).size(); j++) {
+                    s.append(" -> " + this.adjacencyList.get(i).get(j));
+                }
+                s.append("\n");
+            }
+        } else {
+            for (int i = 0; i < this.adjacencyList.size(); i++) {
+                s.append("Vertex " + (i + 1) + ":");
+                for (int j = 0; j < this.adjacencyList.get(i).size(); j++) {
+                    s.append(" -> " + (this.adjacencyList.get(i).get(j) + 1));
+                }
+                s.append("\n");
+            }
+        }
+        return s.toString();
+    }
 
 
 }

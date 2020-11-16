@@ -88,6 +88,7 @@ public class Main {
                     j++;
                 }
                 System.out.println(myGraph.printMatrix());
+                System.out.println(myGraph.printList());
             }
         }
 
