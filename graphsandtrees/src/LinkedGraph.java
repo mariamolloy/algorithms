@@ -10,13 +10,17 @@ public class LinkedGraph {
         this.zeroIndex = false;
     }
 
+    //resets all vertices to unprocessed
     public void reset(){
         for (int i = 0; i < graph.size(); i++){
             graph.get(i).processed = false;
         }
     }
 
+    //adds a vertex to the graph
+    //param v is the id of the vertex
     public void addVertex(int v){
+        //if there is nothing in the graph yet, check the indexing and make it the head of the graph
         if (this.graph.isEmpty()) {
             Vertex newVert = new Vertex(v);
             graph.add(newVert);
@@ -30,6 +34,8 @@ public class LinkedGraph {
         }
     }
 
+    //adds an edge to the graph
+    //params i and j are the vertices of the edge
     public void addEdge(int i, int j){
         if (zeroIndex) {
             this.graph.get(i).neighbors.add(j);
@@ -40,14 +46,20 @@ public class LinkedGraph {
         }
     }
 
+    //traverses the graph breadth first and prints each element
+    //param source is the element we are starting our traversal at
     public void breadthFirst(Vertex source){
         System.out.println("\nBreadth first: ");
+        //create a queue to add elements to print to
+        //starting with the element we called this with ofc
         Queue q = new Queue();
         q.enqueue(source);
         source.processed = true;
+        //as long as the queue isnt empty, print the next element
         while (!q.isEmpty()){
             Vertex v = q.dequeue();
             System.out.print(v.id + ", ");
+            //add all the neighbors of that elemet to the queue
             for (int i = 0; i < v.neighbors.size(); i++){
                 Vertex currentVert = new Vertex(0);
                 if (this.zeroIndex) {
@@ -64,11 +76,16 @@ public class LinkedGraph {
         System.out.println("\n");
     }
 
+
+    //function to traverse depth first through a graph and print each element
+    // param source is the element we are starting at
     public void depthFirst(Vertex source){
+        //if its not processed, print it!
         if (!source.processed){
             System.out.print(source.id + ", ");
             source.processed = true;
         }
+        //go through neighbors of first element and call to print them recursively if they havent been already
         for (int i = 0; i < source.neighbors.size(); i++){
             Vertex currentVert = new Vertex(0);
             if (zeroIndex){

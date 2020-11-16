@@ -104,7 +104,8 @@ public class Main {
                 System.out.print("\n");
                 System.out.println(myGraph.printMatrix());
                 System.out.println(myGraph.printList());
-                //print traversals of linked object graph
+
+                //print both traversals of linked object graph
                 g.breadthFirst(g.head);
                 g.reset();
                 System.out.println("Depth first: ");
