@@ -36,6 +36,8 @@ public class Main {
         return tempMagicItems.toArray(new String[0]);
     }
 
+    //method to read in file with graph instructions and make into both a matrix and an adjancency list and then print it
+    //param @ address: the name of the file to read in
     public static void getGraphs(String address){
         //create a new arraylist of magic items
         ArrayList<String> tempArr = new ArrayList<String>();
@@ -60,13 +62,15 @@ public class Main {
             e.printStackTrace();
         }
 
-        //String[] allGraphs = tempArr.toArray(new String[0]);
-
+        //go through array of graph instructions
         for (int i = 0; i < fileLines; i++) {
+            //if the line says new graph it is time to make a new graph!
             if (tempArr.get(i).equalsIgnoreCase("new graph")) {
                 int v = 0; //keeps track of # of vertices
                 int j = i + 1; //keeps track of what line were on
-                boolean zeroIndex = false; //keeps track if this graph is indexed at zero (true) or one (false)
+                boolean zeroIndex = false; //keeps track if this graph is indexed at zero (true) or one (false) (i know... confusing.. im sorry)
+
+                //add vertices by incrementing vertex count and checking if its indexed at 0 or 1
                 while (tempArr.get(j).length() > 10 && tempArr.get(j).substring(0, 10).equalsIgnoreCase("add vertex")) {
                     if (tempArr.get(j).equalsIgnoreCase("add vertex 0")){
                         zeroIndex = true;
@@ -74,8 +78,10 @@ public class Main {
                     v++;
                     j++;
                 }
+                //make a new graph with the amount of vertices we found
                 Graph myGraph = new Graph(v, zeroIndex);
-                //j++;
+
+                //add edges line by line
                 while (j < fileLines && tempArr.get(j).length() > 8 && tempArr.get(j).substring(0, 8).equalsIgnoreCase("add edge")){
                     String[] edges = tempArr.get(j).substring(9).split("-", 2);
                     int e1 = Integer.parseInt(edges[0].trim());
@@ -87,6 +93,7 @@ public class Main {
                     myGraph.addEdge(e1, e2);
                     j++;
                 }
+                //print matrix and adjacency list
                 System.out.println(myGraph.printMatrix());
                 System.out.println(myGraph.printList());
             }

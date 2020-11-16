@@ -1,11 +1,13 @@
 import java.util.*;
 
 public class Graph {
-    public boolean matrix[][] ;
+    public boolean matrix[][];
     public ArrayList<ArrayList<Integer>> adjacencyList;
     public int vertices;
-    public boolean zeroIndex;
+    public boolean zeroIndex; //keeps track of it graph is indexed at 0 or at 1
 
+    //contructor
+    //params: v = number of vertices, index = if its indexed at zero or not
     public Graph (int v, boolean index){
         this.vertices = v;
         this.matrix = new boolean[v][v];
@@ -27,6 +29,7 @@ public class Graph {
         this.adjacencyList.get(j).add(i);
     }
 
+    //prints the matrix by making it into a string builder
     public String printMatrix(){
         StringBuilder s = new StringBuilder();
         if (this.zeroIndex) {
@@ -37,7 +40,7 @@ public class Graph {
                 }
                 s.append("\n");
             }
-        } else {
+        } else { //if its indexed at one, add one to every label
             for (int i = 0; i < this.vertices; i++) {
                 s.append((i + 1) + ": ");
                 for (boolean j : this.matrix[i]) {
@@ -49,6 +52,7 @@ public class Graph {
         return s.toString();
     }
 
+    //prints adjacency list by making it into a string builder
     public String printList(){
         StringBuilder s = new StringBuilder();
         if (this.zeroIndex) {
@@ -59,7 +63,7 @@ public class Graph {
                 }
                 s.append("\n");
             }
-        } else {
+        } else { //if its indexed at one, we must add one to every label and element
             for (int i = 0; i < this.adjacencyList.size(); i++) {
                 s.append("Vertex " + (i + 1) + ":");
                 for (int j = 0; j < this.adjacencyList.get(i).size(); j++) {
