@@ -6,15 +6,28 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
+        //do everything graph related
         getGraphs("graphs1.txt");
 
+        //on to tree things...
         String[] elements = getMagicItems("magicitems.txt");
-        BinarySearchTree oak = new BinarySearchTree();
+        BinarySearchTree oak = new BinarySearchTree(); //make a new BST
+        //go through list of items and add to BSt
         for (int i = 0; i < elements.length; i++){
-            oak.addTo(oak.root, elements[i]);
+            oak.add(elements[i]);
         }
-        find42(elements);
-        for ()
+
+        //choose 42 rando elements
+        String[] the42 = find42(elements);
+        int avgComp = 0;
+        System.out.print("\n");
+        //go through 42 items and search in BST
+        for (int j = 0 ; j < 42; j ++){
+            System.out.println(oak.search(the42[j], oak.root).data + " with " + oak.comparisons + " comparisons");
+            avgComp += oak.comparisons;
+        }
+        avgComp = avgComp / 42;
+        System.out.println("There were " + avgComp + " comparisons on average");
     }
 
     public static String[] getMagicItems(String address){
