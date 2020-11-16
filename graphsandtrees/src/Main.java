@@ -66,6 +66,8 @@ public class Main {
         for (int i = 0; i < fileLines; i++) {
             //if the line says new graph it is time to make a new graph!
             if (tempArr.get(i).equalsIgnoreCase("new graph")) {
+                LinkedGraph g = new LinkedGraph(); //make the graph of linked objects
+
                 int v = 0; //keeps track of # of vertices
                 int j = i + 1; //keeps track of what line were on
                 boolean zeroIndex = false; //keeps track if this graph is indexed at zero (true) or one (false) (i know... confusing.. im sorry)
@@ -75,10 +77,14 @@ public class Main {
                     if (tempArr.get(j).equalsIgnoreCase("add vertex 0")){
                         zeroIndex = true;
                     }
+                    //add vertex to linked object graph
+                    g.addVertex(Integer.parseInt(tempArr.get(j).substring(11)));
+
+                    //increment count of vertices and counter
                     v++;
                     j++;
                 }
-                //make a new graph with the amount of vertices we found
+                //make a new matrix and adjacency graph with the amount of vertices we found
                 Graph myGraph = new Graph(v, zeroIndex);
 
                 //add edges line by line
@@ -86,6 +92,7 @@ public class Main {
                     String[] edges = tempArr.get(j).substring(9).split("-", 2);
                     int e1 = Integer.parseInt(edges[0].trim());
                     int e2 = Integer.parseInt(edges[1].trim());
+                    g.addEdge(e1, e2); //add edges to linked object list regardless of where its indexed
                     if (!myGraph.zeroIndex){
                         e1 = e1 - 1;
                         e2 = e2 - 1;
@@ -94,8 +101,9 @@ public class Main {
                     j++;
                 }
                 //print matrix and adjacency list
-                System.out.println(myGraph.printMatrix());
-                System.out.println(myGraph.printList());
+             //   System.out.println(myGraph.printMatrix());
+              //  System.out.println(myGraph.printList());
+                g.breadthFirst(g.head);
             }
         }
 

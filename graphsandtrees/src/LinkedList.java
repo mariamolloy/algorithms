@@ -6,7 +6,7 @@ public class LinkedList {
     //method to add a node to the list
     //list : the list you are adding to
     //data : the string/content of the node you are adding
-    public static LinkedList addTo(LinkedList list, String data) {
+    public static LinkedList addTo(LinkedList list, Vertex data) {
 
         //create a new node and set the pointer to null (we dk whats in the list yet)
         Node newNode = new Node(data);
