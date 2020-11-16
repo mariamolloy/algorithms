@@ -1,11 +1,20 @@
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main (String[] args){
         getGraphs("graphs1.txt");
+
+        String[] elements = getMagicItems("magicitems.txt");
+        BinarySearchTree oak = new BinarySearchTree();
+        for (int i = 0; i < elements.length; i++){
+            oak.addTo(oak.root, elements[i]);
+        }
+        find42(elements);
+        for ()
     }
 
     public static String[] getMagicItems(String address){
@@ -114,6 +123,22 @@ public class Main {
             }
         }
 
+    }
+
+    //function returns random 42 elements in an array
+    public static String[] find42 (String[] arr){
+        int size = arr.length;
+        String[] randomItems = new String[42];
+        for (int i = 0; i < 42; i++){
+            Random r = new Random();
+            int index = r.nextInt(size);
+            while(arr[index] == null){
+                index = r.nextInt(size);
+            }
+            randomItems[i] = arr[index];
+            arr[index] = null;
+        }
+        return randomItems;
     }
 
 
