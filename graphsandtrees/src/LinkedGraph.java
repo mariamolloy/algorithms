@@ -10,6 +10,12 @@ public class LinkedGraph {
         this.zeroIndex = false;
     }
 
+    public void reset(){
+        for (int i = 0; i < graph.size(); i++){
+            graph.get(i).processed = false;
+        }
+    }
+
     public void addVertex(int v){
         if (this.graph.isEmpty()) {
             Vertex newVert = new Vertex(v);
@@ -35,7 +41,7 @@ public class LinkedGraph {
     }
 
     public void breadthFirst(Vertex source){
-        System.out.println("\nBreadth First Traversal: ");
+        System.out.println("\nBreadth first: ");
         Queue q = new Queue();
         q.enqueue(source);
         source.processed = true;
@@ -58,9 +64,23 @@ public class LinkedGraph {
         System.out.println("\n");
     }
 
-   // public String depthFirst(){
-
-   // }
+    public void depthFirst(Vertex source){
+        if (!source.processed){
+            System.out.print(source.id + ", ");
+            source.processed = true;
+        }
+        for (int i = 0; i < source.neighbors.size(); i++){
+            Vertex currentVert = new Vertex(0);
+            if (zeroIndex){
+                 currentVert = this.graph.get(source.neighbors.get(i));
+            } else {
+                 currentVert = this.graph.get(source.neighbors.get(i) - 1);
+            }
+            if (!currentVert.processed){
+                depthFirst(currentVert);
+            }
+        }
+    }
 
 
 }

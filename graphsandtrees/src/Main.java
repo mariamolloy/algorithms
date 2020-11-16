@@ -101,10 +101,15 @@ public class Main {
                     j++;
                 }
                 //print matrix and adjacency list
+                System.out.print("\n");
                 System.out.println(myGraph.printMatrix());
                 System.out.println(myGraph.printList());
                 //print traversals of linked object graph
                 g.breadthFirst(g.head);
+                g.reset();
+                System.out.println("Depth first: ");
+                g.depthFirst(g.head);
+                System.out.print("\n");
             }
         }
 
