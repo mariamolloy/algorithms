@@ -9,6 +9,7 @@ public class Vertex {
     public Vertex(int i) {
         this.id = i;
         this.processed = false;
+        this.neighbors = new ArrayList<Integer>();
         this.pointer = null; //we only are using this for the   queue
     }
 

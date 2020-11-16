@@ -101,8 +101,9 @@ public class Main {
                     j++;
                 }
                 //print matrix and adjacency list
-             //   System.out.println(myGraph.printMatrix());
-              //  System.out.println(myGraph.printList());
+                System.out.println(myGraph.printMatrix());
+                System.out.println(myGraph.printList());
+                //print traversals of linked object graph
                 g.breadthFirst(g.head);
             }
         }
