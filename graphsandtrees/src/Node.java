@@ -1,7 +1,7 @@
 
 
 public class Node {
-
+    int id;
     String data;
     Node pointer;
 
