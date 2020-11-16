@@ -4,10 +4,12 @@ public class Graph {
     public boolean matrix[][] ;
     public ArrayList<ArrayList<Integer>> adjacencyList;
     public int vertices;
+    public boolean zeroIndex;
 
-    public Graph (int v){
+    public Graph (int v, boolean index){
         this.vertices = v;
         this.matrix = new boolean[v][v];
+        this.zeroIndex = index;
       // this.adjacencyList = new ArrayList<ArrayList<Integer>>(v);
     }
 
@@ -23,12 +25,22 @@ public class Graph {
 
     public String printMatrix(){
         StringBuilder s = new StringBuilder();
-        for (int i = 0; i < this.vertices; i++) {
-            s.append(i + ": ");
-            for (boolean j : this.matrix[i]) {
-                s.append((j ? 1 : 0) + " ");
+        if (this.zeroIndex) {
+            for (int i = 0; i < this.vertices; i++) {
+                s.append(i + ": ");
+                for (boolean j : this.matrix[i]) {
+                    s.append((j ? 1 : 0) + " ");
+                }
+                s.append("\n");
             }
-            s.append("\n");
+        } else {
+            for (int i = 0; i < this.vertices; i++) {
+                s.append((i + 1) + ": ");
+                for (boolean j : this.matrix[i]) {
+                    s.append((j ? 1 : 0) + " ");
+                }
+                s.append("\n");
+            }
         }
         return s.toString();
     }

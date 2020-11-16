@@ -66,15 +66,24 @@ public class Main {
             if (tempArr.get(i).equalsIgnoreCase("new graph")) {
                 int v = 0; //keeps track of # of vertices
                 int j = i + 1; //keeps track of what line were on
+                boolean zeroIndex = false; //keeps track if this graph is indexed at zero (true) or one (false)
                 while (tempArr.get(j).length() > 10 && tempArr.get(j).substring(0, 10).equalsIgnoreCase("add vertex")) {
+                    if (tempArr.get(j).equalsIgnoreCase("add vertex 0")){
+                        zeroIndex = true;
+                    }
                     v++;
                     j++;
                 }
-                Graph myGraph = new Graph(v);
+                Graph myGraph = new Graph(v, zeroIndex);
                 //j++;
-                while (tempArr.get(j).length() > 8 && tempArr.get(j).substring(0, 8).equalsIgnoreCase("add edge")){
-                    int e1 = Integer.parseInt(tempArr.get(j).substring(9, 10)) - 1;
-                    int e2 = Integer.parseInt(tempArr.get(j).substring(13, 14)) - 1;
+                while (j < fileLines && tempArr.get(j).length() > 8 && tempArr.get(j).substring(0, 8).equalsIgnoreCase("add edge")){
+                    String[] edges = tempArr.get(j).substring(9).split("-", 2);
+                    int e1 = Integer.parseInt(edges[0].trim());
+                    int e2 = Integer.parseInt(edges[1].trim());
+                    if (!myGraph.zeroIndex){
+                        e1 = e1 - 1;
+                        e2 = e2 - 1;
+                    }
                     myGraph.addEdge(e1, e2);
                     j++;
                 }
