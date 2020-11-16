@@ -11,7 +11,6 @@ public class BinarySearchTree {
     //param s is the data of the leaf we add
     void add(String s)
     {
-        reset();
         this.root = addTo(this.root, s);
     }
 

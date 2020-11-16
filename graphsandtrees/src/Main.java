@@ -25,6 +25,7 @@ public class Main {
         for (int j = 0 ; j < 42; j ++){
             System.out.println(oak.search(the42[j], oak.root).data + " with " + oak.comparisons + " comparisons");
             avgComp += oak.comparisons;
+            oak.reset();
         }
         avgComp = avgComp / 42;
         System.out.println("There were " + avgComp + " comparisons on average");
