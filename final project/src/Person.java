@@ -12,5 +12,7 @@ public class Person {
         this.index = 0;
     }
 
+    public boolean isInfected
+
 
 }

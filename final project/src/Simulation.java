@@ -7,39 +7,56 @@ public class Simulation {
     public double testAccuracy;
     public int groupSize;
 
-    Simulation(populationList pop){
-        this.population = pop;
+    Simulation(){
         popSize =  1000;
         infectionRate = 0.02;
         testAccuracy = 1.00;
         groupSize = 8;
+
+        this.population = makePop();
     }
 
-    public void setPop(){
+    //function to create a population list of a population of people
+    public populationList makePop(){
+        populationList newPop = new populationList();
         for (int i = 0; i < popSize; i++){
-
+            newPop.addTo(newPop);
         }
+        return newPop;
     }
 
     //function to set a percentage of the population to infected
     //called from Simulation class bc it needs to know the infection rate to know how many ppl to infect
     //param: rate = infection rate
     public  populationList goViral(populationList p){
+
+
+
         int[] infectedPpl = chooseInfected();
-        int index = 1;
+        population.infectPpl(p, infectedPpl);
+
+
+        int totalInf = infectedPpl.length;
+        int infectedFound = 0;
         Person last = p.first;
         if (last.index == infectedPpl[0]){
-
-        } else {
-            //go through the list
+            last.infected = true;
+            infectedFound++;
+        }
+        //go through the list
             while (last.pointer != null){
                 for (int i = 0; i < infectedPpl.length; i++){
                     if (last.index == infectedPpl[i]){
-
+                        last.infected = true;
+                        infectedFound++;
+                        if(infectedFound == totalInf){
+                            break;
+                        }
+                        break;
                     }
                 }
             }
-        }
+
         //go through the list
         while (last.pointer != null){
             for (int i = 0; i < infectedPpl.length; i++){
@@ -50,6 +67,7 @@ public class Simulation {
         }
     }
 
+    //helper function that returns an array of the indices of the people who are infected
     public int[] chooseInfected(){
         //find # of infected ppl per infection rate w this pop size
         int amtPplInfected = (int)(popSize * infectionRate);
@@ -73,6 +91,8 @@ public class Simulation {
                     //generate random values from 0 - max population size
                     randomInf = rando.nextInt(popSize);
                 }
+                pplInf[i] = randomInf;
+                indices[randomInf] = -1; //means this one was already chosen
             } else {
                 pplInf[i] = randomInf;
                 indices[randomInf] = -1; //means this one was already chosen

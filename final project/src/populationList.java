@@ -70,7 +70,58 @@ public class populationList {
         return size;
     }
 
-    public void goViral(int[] infected)
+    public void infectPpl(populationList l, int[] inf){
+
+        int totalInf = inf.length;
+        int infectedFound = 0;
+        Person last = l.first;
+        while (infectedFound < totalInf){
+            if (last.index == inf[0]){
+                last.infected = true;
+                infectedFound++;
+            }
+            int numCounter = 0;
+            while (last.pointer != null){
+                boolean isInf = false;
+                boolean notInf = false;
+                int infCounter = 0;
+                while(isInf == false || notInf == false){
+                    if (last.index == inf[numCounter]){
+                        last.infected = true;
+                        inf[] =
+                        infectedFound++;
+                        isInf = true;
+
+                    } else {
+                        infCounter++;
+                        if (infCounter == totalInf){
+                            notInf = true;
+                        }
+                    }
+
+                }
+                numCounter++;
+                for (int i = 0; i < inf.length; i++){
+
+                }
+            }
+        }
+
+
+
+
+     //   int index = 1;
+        if (l.first == null){
+
+        } else {
+            Person last = l.first;
+            //go through the list
+            while (last.pointer != null){
+                last = last.pointer;
+            }
+        }
+
+    }
 
 
 

@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516342fc-e9b5-49c0-8066-5b2d630f69e2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../final project/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final project/src/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final project/src/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final project/src/Simulation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final project/src/Sort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../final project/src/populationList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final project/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final project/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final project/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final project/src/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final project/src/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final project/src/Simulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../final project/src/populationList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../final project/src/populationList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
