@@ -20,6 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="516342fc-e9b5-49c0-8066-5b2d630f69e2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../final project/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../final project/src/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../final project/src/Queue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../final project/src/Simulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../final project/src/Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../final project/src/populationList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,10 +167,11 @@
     </state>
     <state width="1358" height="198" key="GridCell.Tab.0.right/0.23.1440.823@0.23.1440.823" timestamp="1603070393959" />
     <state width="1358" height="197" key="GridCell.Tab.0.right/0.23.1440.825@0.23.1440.825" timestamp="1604178928227" />
-    <state x="88" y="56" key="new project wizard" timestamp="1605057823410">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="88" y="56" key="new project wizard" timestamp="1607220900472">
+      <screen x="0" y="23" width="1440" height="825" />
     </state>
     <state x="88" y="56" key="new project wizard/0.23.1440.821@0.23.1440.821" timestamp="1603858774978" />
+    <state x="88" y="56" key="new project wizard/0.23.1440.825@0.23.1440.825" timestamp="1607220900472" />
     <state x="88" y="56" key="new project wizard/0.23.1440.826@0.23.1440.826" timestamp="1605057823410" />
   </component>
   <component name="masterDetails">
