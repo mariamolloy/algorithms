@@ -72,7 +72,6 @@ public class populationList {
     //param l = the list of the population we are spreading the virus to
     //param inf = a sorted array with the indices of the members of the population to be infected
     public static void infectPpl(populationList l, int[] inf){
-        System.out.println("starting infection");
 
         int totalInf = inf.length; //how many people we should infect
         int infectedFound = 0; //counter to see which infected person were on
@@ -83,7 +82,6 @@ public class populationList {
             System.out.println(last.index);
             last.infected = true;
             infectedFound++;
-            System.out.println("first has the rona");
         }
         //go through the population and infect as necessary
         //exit loop either when we have gone through the whole pop or when we have infected everyone we need to infect

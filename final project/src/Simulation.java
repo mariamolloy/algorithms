@@ -7,8 +7,11 @@ public class Simulation {
     public double testAccuracy;
     public int groupSize;
 
-    Simulation(int s){
-        popSize =  s;
+    Simulation(){
+    }
+
+    public void init(int size){
+        popSize =  size;
         infectionRate = 0.02;
         testAccuracy = 1.00;
         groupSize = 8;
@@ -88,6 +91,16 @@ public class Simulation {
     }
 
     public void test(){}
+
+    //Runs the simulation
+    //param pop is the population size we are running the simulation with
+    public String runSim(int pop){
+        this.init(pop);
+        this.goViral();
+
+        String print = "we did it!";
+        return(print);
+    }
 
 
 
