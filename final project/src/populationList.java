@@ -2,13 +2,15 @@ public class populationList {
 
     //head of the list
     Person first;
+    //for queue functions
+    Person tail;
 
     //method to add a node to the list
     //list : the list you are adding to
     public static populationList addTo(populationList list) {
 
         //create a new node and set the pointer to null (we dk whats in the list yet)
-        Person newPerson = new Person(0);
+        Person newPerson = new Person(false);
         newPerson.pointer = null;
 
         //check to see if there is anything in the list yet
@@ -95,5 +97,49 @@ public class populationList {
         }
     }
 
+    boolean isEmpty(){
+        //check to see if theres anything in the queue yet
+        if (this.first == null){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+
+    //Queueueue things
+
+    //method to enqueueueue a node (add to back of the queueue)
+    //inf : infected ??? //haha like int
+    public void enqueue(boolean inf){
+
+        //new node we are enqueueueueing
+        Person newNode = new Person(inf);
+
+        //if list isn't empty add new node to the end of the queueueue
+        if (!this.isEmpty()){
+            this.tail.pointer = newNode;
+            this.tail = newNode;
+        } else {
+            //if the list is empty the new node is the only element so its the head and tail
+            this.first = this.tail = newNode;
+        }
+    }
+
+    //method to remove a node from the queueueue
+    //returns the node we removed
+    public Person dequeue(){
+
+        //if list isnt empty we pop the top (same idea as stack pop())
+        if (!(this.isEmpty())){
+            Person firstInLine = this.first;
+            this.first = this.first.pointer;
+            return firstInLine;
+        } else {
+            //if its empty return null we cant dequeueue anything
+            System.out.println("Stack Underflow Error");
+            return null;
+        }
+    }
 
 }

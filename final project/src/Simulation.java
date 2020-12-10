@@ -6,6 +6,14 @@ public class Simulation {
     public double infectionRate;
     public double testAccuracy;
     public int groupSize;
+    int testsUsed = 0;
+
+
+    int case1Count = 0;
+    int case2Count = 0;
+    int case3Count = 0;
+
+    String print = "";
 
     Simulation(){
     }
@@ -23,7 +31,7 @@ public class Simulation {
     public populationList makePop(){
         populationList newPop = new populationList();
         for (int i = 0; i < popSize; i++){
-            newPop.addTo(newPop);
+            populationList.addTo(newPop);
         }
         return newPop;
     }
@@ -36,7 +44,7 @@ public class Simulation {
 
 
         int[] infectedPpl = chooseInfected();
-        population.infectPpl(population, infectedPpl);
+        populationList.infectPpl(population, infectedPpl);
 
         System.out.println("we gave them the rona");
 
@@ -80,17 +88,103 @@ public class Simulation {
         s.quickSort(0, pplInf.length - 1);
         pplInf = s.arr;
 
-        for (int m = 0; m < pplInf.length; m++){
+      /*  for (int m = 0; m < pplInf.length; m++){
             System.out.println(pplInf[m]);
-        }
+        }*/
         return pplInf;
     }
 
-    public void testPop(){
+    public String testPop(){
+        int numOfGroups = this.popSize / this.groupSize; //nned to add one to run a number where theres pop size not / by groupsize
+        int groupCounter = 0;
+        String print = "";
 
+        //each time we run through this we make a new group
+        //we shld run through this 125 times
+        while((population.isEmpty()) && (groupCounter <= numOfGroups)){
+            boolean case2or3 = false; //lets assume its case 1. it probably is
+            populationList groupX = new populationList();
+
+            for (int i = 0; i < groupSize; i++) {
+
+                Person copyPerson = population.dequeue(); //it feels weird to say new when i named the variable person??
+                this.testsUsed++;
+
+                if (copyPerson.infected == true){
+                    //we must find them!!
+                    case2or3 = true;
+                }
+                groupX.enqueue(copyPerson.infected);
+
+            }
+            if (case2or3 == true){ //if its case 1 we dont have to test anymore, no one has it
+                test(true, groupX); //where we do the real work
+            } else {
+                case1Count++;
+            }
+            }
+
+            case2Count = case1Count - case3Count;
+            print = (("Case(1): ") + numOfGroups + " x 0.85 -->" + " with " + case1Count + " tests used \n" +
+                     "Case(2): " + numOfGroups + " x 0.1496 -->" +  " with " + case2Count + " tests used \n" +
+                   " Case(3): " + numOfGroups + " x 0.0004 -->" + " with " + case3Count + " tests used \n" +
+                    "---------------------------------------------------------------------------------------------------------------------------------------------------- \n" +
+                    this.testsUsed + " tests for " + popSize + " people with an infection rate of " + (infectionRate * 100) + "% \n\n\n" +
+                    "xoxo Gossip girl");
+
+return print;    }
+
+    //this is where we recurse
+    public void test(boolean inf, populationList exposed){
+        if (inf == true){
+            populationList a = new populationList();
+            boolean aInf = false;
+            int howManyMoreTests = 0;
+            populationList b = new populationList();
+            boolean bInf = false;
+
+            int grpSz = exposed.getSize(exposed);
+            if (grpSz == 1){
+                if(exposed.first.infected == true){
+                    this.testsUsed++;
+                }
+            } else {
+                for (int i = 0; i < grpSz; i++){
+                    Person temp = exposed.dequeue(); //this just feels like this the office
+
+                    if (temp.infected == true){
+                        if (i < (i/2)){
+                            a.enqueue(temp.infected);
+                            aInf = true;
+                        } else {
+                            b.enqueue(temp.infected);
+                            bInf = true;
+                        }
+                    } else {
+                        if (i < (i/2)){
+                            a.enqueue(temp.infected);
+                        } else {
+                            b.enqueue(temp.infected);
+                        }
+                    }
+
+                }
+
+            }
+
+            if ((aInf == true) && (bInf == true)) {
+                case3Count++;
+                test(true, a);
+                test(true, b);
+            }else if (aInf == true){
+                case3Count++;
+                test(true, a);
+            } else if (bInf == true){
+                case3Count++;
+                test(true, b);
+            }
+        }
     }
-
-    public void test(){}
 
     //Runs the simulation
     //param pop is the population size we are running the simulation with
@@ -98,8 +192,8 @@ public class Simulation {
         this.init(pop);
         this.goViral();
 
-        String print = "we did it!";
-        return(print);
+        String print = "we did it! not rlly yet";
+        return(this.testPop());
     }
 
 

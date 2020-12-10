@@ -6,9 +6,9 @@ public class Person {
 
     //node constructor
     //set pointer to null bc we don't know yet if it is pointing to anything until we add more nodes
-    Person(int i) {
-        infected = false;
-        pointer = null;
+    Person(boolean i) {
+        this.infected = i;
+        this.pointer = null;
         this.index = 0;
     }
 
