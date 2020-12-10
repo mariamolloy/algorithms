@@ -1,6 +1,8 @@
 public class Main {
-    public static void Main (String[] args){
-        Simulation missRona = new Simulation();
-
+    public static void main (String[] args){
+        System.out.println("hi world");
+        Simulation missRona = new Simulation(1000);
+        missRona.goViral();
+        System.out.println("bye world");
     }
 }

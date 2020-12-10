@@ -9,7 +9,7 @@ public class Main {
         //do everything graph related
         getGraphs("graphs1.txt");
 
-        //on to tree things...
+    /*    //on to tree things...
         String[] elements = getMagicItems("magicitems.txt");
         BinarySearchTree oak = new BinarySearchTree(); //make a new BST
         //go through list of items and add to BSt
@@ -28,7 +28,10 @@ public class Main {
             oak.reset();
         }
         avgComp = avgComp / 42;
-        System.out.println("There were " + avgComp + " comparisons on average");
+        System.out.println("There were " + avgComp + " comparisons on average"); */
+
+
+
     }
 
     public static String[] getMagicItems(String address){

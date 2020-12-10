@@ -7,8 +7,8 @@ public class Simulation {
     public double testAccuracy;
     public int groupSize;
 
-    Simulation(){
-        popSize =  1000;
+    Simulation(int s){
+        popSize =  s;
         infectionRate = 0.02;
         testAccuracy = 1.00;
         groupSize = 8;
@@ -26,48 +26,17 @@ public class Simulation {
     }
 
     //function to set a percentage of the population to infected
+    //basically a function to spread the virus, hence the name
     //called from Simulation class bc it needs to know the infection rate to know how many ppl to infect
     //param: rate = infection rate
-    public  populationList goViral(populationList p){
-
-
+    public  void goViral(){
 
         int[] infectedPpl = chooseInfected();
-        population.infectPpl(p, infectedPpl);
+        population.infectPpl(population, infectedPpl);
 
-
-        int totalInf = infectedPpl.length;
-        int infectedFound = 0;
-        Person last = p.first;
-        if (last.index == infectedPpl[0]){
-            last.infected = true;
-            infectedFound++;
-        }
-        //go through the list
-            while (last.pointer != null){
-                for (int i = 0; i < infectedPpl.length; i++){
-                    if (last.index == infectedPpl[i]){
-                        last.infected = true;
-                        infectedFound++;
-                        if(infectedFound == totalInf){
-                            break;
-                        }
-                        break;
-                    }
-                }
-            }
-
-        //go through the list
-        while (last.pointer != null){
-            for (int i = 0; i < infectedPpl.length; i++){
-                if (last.index == infectedPpl[i]){
-
-                }
-            }
-        }
     }
 
-    //helper function that returns an array of the indices of the people who are infected
+    //helper function that returns a sorted array of the indices of the people who are infected
     public int[] chooseInfected(){
         //find # of infected ppl per infection rate w this pop size
         int amtPplInfected = (int)(popSize * infectionRate);
@@ -78,6 +47,7 @@ public class Simulation {
         int counter = 0;
         while (last.pointer != null){
             indices[counter] = last.index;
+            last = last.pointer;
             counter++;
         }
         //for each person infected, find a random index
@@ -101,11 +71,17 @@ public class Simulation {
 
         //lets sort this to make our lives a little easier //we have the code why not
         Sort s = new Sort(pplInf);
-        s.quickSort(0, pplInf.length);
+        s.quickSort(0, pplInf.length - 1);
         pplInf = s.arr;
 
         return pplInf;
     }
+
+    public void testPop(){
+
+    }
+
+    public void test(){}
 
 
 
