@@ -28,6 +28,8 @@ public class Simulation {
     Simulation(){
     }
 
+    //function to reset a simulation w a new population size
+    //param size = population sample size
     public void init(int size){
         popSize =  size;
         infectionRate = 0.02;
@@ -63,7 +65,6 @@ public class Simulation {
     //function to set a percentage of the population to infected
     //basically a function to spread the virus, hence the name
     //called from Simulation class bc it needs to know the infection rate to know how many ppl to infect
-    //param: rate = infection rate
     public  void goViral(){
 
         int[] infectedPpl = chooseInfected();
@@ -115,6 +116,8 @@ public class Simulation {
         return pplInf;
     }
 
+    //function called to break a population into groups of 8 and call the recursive test() function
+    //returns our output to print
     public String testPop(){
         int numOfGroups = this.popSize / this.groupSize; //nned to add one to run a number where theres pop size not / by groupsize
         int groupCounter = 0;
@@ -128,6 +131,7 @@ public class Simulation {
 
             populationList groupX = new populationList();
 
+            //add groupSize(8) people to groupX
             for (int i = 0; i < groupSize; i++) {
 
                 Person copyPerson = population.dequeue(); //it feels weird to say new when i named the variable person??
@@ -165,6 +169,10 @@ public class Simulation {
     }
 
     //this is where we recurse
+    //function to divide groups in half and test them for the virus
+    //param : inf = infected?? if the pool has tested positive and needs to be subdivided
+    //param : exposed = list of people we are testing
+    //param : caseNum = is this a case 1, case 2, or case 3 situation???
     public void test(boolean inf, populationList exposed, int caseNum){
         this.totalTestsUsed++;
         switch(caseNum){
@@ -188,6 +196,7 @@ public class Simulation {
 
             int grpSz = exposed.getSize(exposed);
 
+            //we cant recurse any longer
             if (grpSz == 2){
                 for (int i = 0; i < 2;i ++){
                     Person temp = exposed.dequeue();
@@ -221,6 +230,7 @@ public class Simulation {
     }
 
     //Runs the simulation
+    //returns an output string to print
     //param pop is the population size we are running the simulation with
     public String runSim(int pop){
 

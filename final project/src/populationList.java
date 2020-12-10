@@ -52,11 +52,10 @@ public class populationList {
     public int getSize(populationList p){
         int size = 0;
         //check to see if there is anything in the list yet
-        //if list is empty, the node we are adding is the new head
         if (p.first == null){
-            size = p.first.index + 1;
+            size = 0;
         }
-        //if list ISN'T empty, go through list and add new node to the end of the list
+        //if list ISN'T empty, go through list and count
         else {
             int index = 1;
             Person last = p.first;
