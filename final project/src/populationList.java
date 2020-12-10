@@ -90,7 +90,7 @@ public class populationList {
         while ((last.pointer != null) && (infectedFound < inf.length)){
                 last = last.pointer;
                 if (last.index == inf[infectedFound]){
-                    System.out.print(last.index + " \n");
+                   // System.out.print(last.index + " \n");
                     last.infected = true;
                     infectedFound++;
                 }

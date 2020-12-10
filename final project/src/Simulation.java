@@ -52,11 +52,8 @@ public class Simulation {
     //param: rate = infection rate
     public  void goViral(){
 
-
         int[] infectedPpl = chooseInfected();
         populationList.infectPpl(population, infectedPpl);
-
-        System.out.println("we gave them the rona");
 
     }
 
@@ -123,37 +120,33 @@ public class Simulation {
 
                 if (copyPerson.infected == true){
                     //we must find them!!
-                    case2or3 = true;
-                    this.testCounter++;
-
+                    case2or3 = true; //theres someone infected
+                    this.testCounter++; //number of inf people in this group goes up by 1
                 }
                 groupX.enqueue(copyPerson.infected);
-
             }
 
-            switch(this.testCounter){
-                case 0:
-                    this.case1Count++;
-                    break;
-                case 1:
-                    this.case2Count++;
-                    break;
-                case 3:
-                    this.case3Count++;
-                    break;
+            if (this.testCounter == 0){
+                this.case1Count++;
+            } else if (this.testCounter == 1){
+                this.case2Count++;
+            } else {
+                this.case3Count++;
+                testCounter = 2; //if its greater than 2 just so we know its case 3
             }
 
             this.test(case2or3, groupX, (testCounter + 1));
         }
+
+        case2Tests = totalTestsUsed - case1Tests - case3Tests;
         if (case1Tests + case2Tests + case3Tests != totalTestsUsed){
             System.out.println("uh oh we messed up with the test count");
         }
-            print = (("Case(1): ") + numOfGroups + " x 0.85 --> " +  case1Count + " instances with "+ case1Tests +" tests used \n" +
+        print = (("Case(1): ") + numOfGroups + " x 0.85 --> " +  case1Count + " instances with "+ case1Tests +" tests used \n" +
                      "Case(2): " + numOfGroups + " x 0.1496 --> " +  case2Count + " instances with " + case2Tests +" tests used \n" +
-                   " Case(3): " + numOfGroups + " x 0.0004 --> " + case3Count + " instances with " + case3Tests + " tests used \n" +
+                   "Case(3): " + numOfGroups + " x 0.0004 --> " + case3Count + " instances with " + case3Tests + " tests used \n" +
                     "---------------------------------------------------------------------------------------------------------------------------------------------------- \n" +
-                    this.totalTestsUsed + " tests found " + totalSick + " infected people in a population of " + popSize + " people with an infection rate of " + (infectionRate * 100) + "% \n\n\n" +
-                    "xoxo Gossip girl");
+                    this.totalTestsUsed + " tests found " + totalSick + " infected people in a population of " + popSize + " people with an infection rate of " + (infectionRate * 100) + "% \n\n\n" );
             return print;
     }
 
@@ -205,7 +198,7 @@ public class Simulation {
                     b.enqueue(temp.infected);
                 }
 
-                //no matter what just test both bc
+                //no matter what just test both
                 test(aInf, a, caseNum);
                 test(bInf, b, caseNum);
             }
@@ -219,7 +212,6 @@ public class Simulation {
         this.init(pop);
         this.goViral();
 
-        String print = "we did it! not rlly yet";
         return(this.testPop());
     }
 
