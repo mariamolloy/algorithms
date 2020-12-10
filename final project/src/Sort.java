@@ -89,7 +89,7 @@ public class Sort {
         for (int j = p; j < r; j++){
             this.comparisons++;
             //if the current element is less than the pivot, we swap the current element and the first unsorted element
-            if (pivot <= this.arr[j]){
+            if (pivot >= this.arr[j]){
                 i++;
                 int temp = this.arr[j];
                 this.arr[j] = this.arr[i];

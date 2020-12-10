@@ -31,8 +31,11 @@ public class Simulation {
     //param: rate = infection rate
     public  void goViral(){
 
+
         int[] infectedPpl = chooseInfected();
         population.infectPpl(population, infectedPpl);
+
+        System.out.println("we gave them the rona");
 
     }
 
@@ -74,6 +77,9 @@ public class Simulation {
         s.quickSort(0, pplInf.length - 1);
         pplInf = s.arr;
 
+        for (int m = 0; m < pplInf.length; m++){
+            System.out.println(pplInf[m]);
+        }
         return pplInf;
     }
 
