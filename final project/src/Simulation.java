@@ -35,6 +35,20 @@ public class Simulation {
         groupSize = 8;
 
         this.population = makePop();
+
+        this.totalSick = 0;
+        this.totalTestsUsed =0;
+
+        //counter to keep track of how many instances of each case in a sim run
+        int case1Count = 0;
+        int case2Count = 0;
+        int case3Count = 0;
+
+        //counter to keep track of how many tests are used per case
+        //when sim is done the sum of these three ints should = totalTestsUsed
+        int case1Tests = 0;
+        int case2Tests = 0;
+        int case3Tests = 0;
     }
 
     //function to create a population list of a population of people
@@ -209,6 +223,7 @@ public class Simulation {
     //Runs the simulation
     //param pop is the population size we are running the simulation with
     public String runSim(int pop){
+
         this.init(pop);
         this.goViral();
 
